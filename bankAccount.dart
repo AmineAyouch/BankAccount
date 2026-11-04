@@ -12,13 +12,16 @@ class Bankaccount {
 
   set withdraw(double amount) {
     if (!amount.isFinite || amount > _balance || amount < 0) {
-      print("sorry $amount");
+      print("sorry ");
     } else {
       _balance -= amount;
     }
   }
 
   get balance => _balance;
+
+  @override
+  String toString() => "your name is $owner and your balance is $_balance";
 }
 
 void main() {
@@ -26,5 +29,5 @@ void main() {
   user1.diposite = 200;
   print(user1.balance);
   user1.withdraw = 800;
-  print(user1.balance);
+  print(user1.toString());
 }
